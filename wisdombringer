@@ -1,0 +1,5 @@
+#!/bin/sh
+
+knowledge_size=$(grep -c . ./bits-of-wisdom.txt)
+wisdom_index=$(shuf -i "1-$knowledge_size" -n 1)
+grep . ./bits-of-wisdom.txt | awk "NR==$wisdom_index"
